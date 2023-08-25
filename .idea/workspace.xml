@@ -4,7 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="" />
+    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/live-api/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-common-interface/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-common-interface/src/main/java/org/live/common/interfaces/utils/ConvertBeanUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-datasource-starter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-datasource-starter/src/main/java/org/live/framework/datasource/config/ShardingJdbcDatasourceAutoInitConnectionConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-datasource-starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/config/IGenericJackson2JsonRedisSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/config/MapperFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/RedisKeyBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/RedisKeyLoadMatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/UserProviderCacheKeyBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/po/UserPO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/resources/qiyu-db-sharding.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-api/src/main/resources/dubbo.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-interface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-interface/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/interfaces/IUserRpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/interfaces/IUserRpc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/UserProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/UserProviderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/rpc/UserRpcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/rpc/UserRpcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/resources/dubbo.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +51,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -38,33 +75,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Code/Study/live-app/live-api/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.31839082&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;dad50dce32619fe4e9e4fe5905938b96&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/Code/Study/live-app/live-framework/live-framework-redis.starter/src/main/resources/META-INF/spring",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.31839082",
+    "settings.editor.selected.configurable": "Errors",
+    "spring.configuration.checksum": "3af580fcbba5e7e1e005f605f64f5845",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\Study\live-app\live-framework\live-framework-redis.starter\src\main\resources\META-INF\spring" />
       <recent name="D:\Code\Study\live-app\live-api\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\Study\live-app\live-user-provider\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -107,8 +152,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ApiWebApplication" />
         <item itemvalue="Spring Boot.UserProviderApplication" />
+        <item itemvalue="Spring Boot.ApiWebApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -124,12 +169,25 @@
       <workItem from="1692717693456" duration="41000" />
       <workItem from="1692717749467" duration="13924000" />
       <workItem from="1692885103723" duration="211000" />
-      <workItem from="1692885385851" duration="350000" />
+      <workItem from="1692885385851" duration="4387000" />
+      <workItem from="1692944825456" duration="1437000" />
+      <workItem from="1692946369138" duration="17031000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

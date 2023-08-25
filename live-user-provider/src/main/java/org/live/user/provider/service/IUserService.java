@@ -1,18 +1,9 @@
-package org.live.user.interfaces;
+package org.live.user.provider.service;
 
 import org.live.user.dto.UserDTO;
 
-/**
- * @author :Joseph Ho
- * Description:
- * Date: 23:07 2023/8/22
- */
-public interface IUserRpc {
-    /**
-     * 查询用户
-     * @param userId
-     * @return
-     */
+public interface IUserService {
+
     UserDTO getByUserId(Long userId);
 
     /**
@@ -28,6 +19,5 @@ public interface IUserRpc {
      * @return
      */
     boolean insertOne(UserDTO userDTO);
-
 
 }

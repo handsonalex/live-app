@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: live-user-provider
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:qiyu-db-sharding.yaml
+    hikari:
+      pool-name: qiyu-user-pool
+      minimum-idle: 15
+      maximum-pool-size: 300
+      connection-init-sql: select 1
+      connection-timeout: 4000
+      max-lifetime: 60000
+      idle-timeout: 60000
+  data:
+    redis:
+      port: 6379
+      host: 175.24.202.36
+      password: 120326hjj
+      lettuce:
+        pool:
+          min-idle: 10
+          max-active: 50
+          max-idle: 20
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: nacos://175.24.202.36:8848?namespace=051629c5-83a6-4b27-a21d-c2970ee6f08d
+  protocol:
+    name: dubbo
+    port: 9091
