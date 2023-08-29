@@ -30,3 +30,5 @@ dubbo:
   protocol:
     name: dubbo
     port: 9091
+  provider:
+    timeout: 10000

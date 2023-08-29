@@ -2,6 +2,9 @@ package org.live.user.interfaces;
 
 import org.live.user.dto.UserDTO;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author :Joseph Ho
  * Description:
@@ -29,5 +32,6 @@ public interface IUserRpc {
      */
     boolean insertOne(UserDTO userDTO);
 
+    Map<Long,UserDTO> batchQueryUserInfo(List<Long> userIdList);
 
 }

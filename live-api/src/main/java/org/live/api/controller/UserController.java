@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 /**
  * @author :Joseph Ho
  * Description:
@@ -26,6 +31,12 @@ public class UserController {
      */
     @DubboReference
     private IUserRpc userRpc;
+
+
+    @GetMapping("/batchQueryUserInfo")
+    public Map<Long,UserDTO> batchQueryUserInfo(String userIdStr){
+        return userRpc.batchQueryUserInfo(Arrays.stream(userIdStr.split(",")).map(Long::valueOf).toList());
+    }
 
     @GetMapping("/getUserId")
     public UserDTO getUserId(Long userId){

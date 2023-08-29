@@ -4,40 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/live-api/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-common-interface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-common-interface/src/main/java/org/live/common/interfaces/utils/ConvertBeanUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-datasource-starter/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-datasource-starter/src/main/java/org/live/framework/datasource/config/ShardingJdbcDatasourceAutoInitConnectionConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-datasource-starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/config/IGenericJackson2JsonRedisSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/config/MapperFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/RedisKeyBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/RedisKeyLoadMatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/UserProviderCacheKeyBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/po/UserPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/resources/qiyu-db-sharding.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="分布式mysql和redis的配置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-api/src/main/resources/dubbo.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-interface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-interface/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/interfaces/IUserRpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/interfaces/IUserRpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/UserProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/UserProviderApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/rpc/UserRpcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/rpc/UserRpcImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/resources/dubbo.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +70,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.31839082",
     "settings.editor.selected.configurable": "Errors",
-    "spring.configuration.checksum": "3af580fcbba5e7e1e005f605f64f5845",
+    "spring.configuration.checksum": "a3e925291fb64804a6f667dbb3fefdb7",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -152,8 +126,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.UserProviderApplication" />
         <item itemvalue="Spring Boot.ApiWebApplication" />
+        <item itemvalue="Spring Boot.UserProviderApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -171,8 +145,18 @@
       <workItem from="1692885103723" duration="211000" />
       <workItem from="1692885385851" duration="4387000" />
       <workItem from="1692944825456" duration="1437000" />
-      <workItem from="1692946369138" duration="17031000" />
+      <workItem from="1692946369138" duration="17250000" />
+      <workItem from="1693229176361" duration="10643000" />
     </task>
+    <task id="LOCAL-00001" summary="分布式mysql和redis的配置">
+      <option name="closed" value="true" />
+      <created>1692972489939</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692972489939</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +172,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="分布式mysql和redis的配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="分布式mysql和redis的配置" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

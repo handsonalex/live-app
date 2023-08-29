@@ -6,6 +6,9 @@ import org.live.user.dto.UserDTO;
 import org.live.user.interfaces.IUserRpc;
 import org.live.user.provider.service.IUserService;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author :Joseph Ho
  * Description:
@@ -31,5 +34,10 @@ public class UserRpcImpl implements IUserRpc {
     @Override
     public boolean insertOne(UserDTO userDTO) {
         return userService.insertOne(userDTO);
+    }
+
+    @Override
+    public Map<Long, UserDTO> batchQueryUserInfo(List<Long> userIdList) {
+        return userService.batchQueryUserInfo(userIdList);
     }
 }

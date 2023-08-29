@@ -2,6 +2,9 @@ package org.live.user.provider.service;
 
 import org.live.user.dto.UserDTO;
 
+import java.util.List;
+import java.util.Map;
+
 public interface IUserService {
 
     UserDTO getByUserId(Long userId);
@@ -20,4 +23,5 @@ public interface IUserService {
      */
     boolean insertOne(UserDTO userDTO);
 
+    Map<Long,UserDTO> batchQueryUserInfo(List<Long> userIdList);
 }
