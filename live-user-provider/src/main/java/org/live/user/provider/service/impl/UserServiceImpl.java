@@ -1,7 +1,13 @@
 package org.live.user.provider.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
 import jakarta.annotation.Resource;
+import org.apache.rocketmq.client.exception.MQBrokerException;
+import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.MQProducer;
+import org.apache.rocketmq.common.message.Message;
+import org.apache.rocketmq.remoting.exception.RemotingException;
 import org.live.common.interfaces.utils.ConvertBeanUtils;
 import org.live.framework.redis.starter.key.UserProviderCacheKeyBuilder;
 import org.live.user.dto.UserDTO;
@@ -35,6 +41,9 @@ public class UserServiceImpl implements IUserService {
     @Resource
     private UserProviderCacheKeyBuilder userProviderCacheKeyBuilder;
 
+    @Resource
+    private MQProducer mqProducer;
+
     @Override
     public UserDTO getByUserId(Long userId) {
         if (userId == null){
@@ -58,6 +67,19 @@ public class UserServiceImpl implements IUserService {
             return false;
         }
         userMapper.updateById(ConvertBeanUtils.convert(userDTO, UserPO.class));
+        String key = userProviderCacheKeyBuilder.buildUserInfoKey(userDTO.getUserId());
+        //redis第一次删除
+        redisTemplate.delete(key);
+        Message message = new Message();
+        message.setTopic("user-update-cache");
+        message.setBody(JSON.toJSONString(userDTO).getBytes());
+        //延迟级别，1代表延迟1秒发送
+        message.setDelayTimeLevel(1);
+        try {
+            mqProducer.send(message);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         return true;
     }
 

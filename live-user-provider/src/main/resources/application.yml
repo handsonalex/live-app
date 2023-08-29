@@ -22,6 +22,18 @@ spring:
           min-idle: 10
           max-active: 50
           max-idle: 20
+
+qiyu:
+  rmq:
+    producer:
+      nameSrv: 175.24.202.36:9876
+      groupName: ${spring.application.name}
+      retryTime: 3
+      sendTimeOut: 3000
+    consumer:
+      nameSrv: 175.24.202.36:9876
+      groupName: ${spring.application.name}
+
 dubbo:
   application:
     name: ${spring.application.name}
