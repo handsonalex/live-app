@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Mapper;
 import org.live.user.provider.dao.po.UserPO;
 
 @Mapper
-public interface UserMapper extends BaseMapper<UserPO> {
+public interface IUserMapper extends BaseMapper<UserPO> {
 
 }

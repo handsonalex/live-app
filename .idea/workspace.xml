@@ -4,26 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="redis延迟双删">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-interface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-interface/src/main/java/org/live/id/generate/interfaces/IdGenerateRpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/IdGenerateApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/dao/mapper/IdGenerateMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/dao/po/IdGeneratePO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/rpc/IdGenerateRpcImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/service/IdGenerateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/service/bo/LocalSeqIdBo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/service/bo/LocalUnSeqIdBo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/service/impl/IdGenerateServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="分布式id发射器">
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/constants/UserTagFieldNameConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/constants/UserTagsEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/interfaces/IUserTagRpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/utils/TagInfoUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/IUserTagMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/po/UserTagPO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/rpc/UserTagRpcImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/IUserTagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserTagServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/UserProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/UserProviderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/IUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/resources/qiyu-db-sharding.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/resources/qiyu-db-sharding.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -61,32 +57,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/Code/Study/live-app/live-id-generate-provider/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.31839082",
-    "settings.editor.selected.configurable": "editor.preferences.completion",
-    "spring.configuration.checksum": "68dec8c247740cbd0f7652ea4d755cb2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Code/Study/live-app/live-id-generate-provider/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31839082&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;68dec8c247740cbd0f7652ea4d755cb2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -110,7 +106,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.IdGenerateApplication">
+  <component name="RunManager" selected="Spring Boot.UserProviderApplication">
+    <configuration name="UserProviderApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.live.user.provider.UserProviderApplication" />
+      <module name="live-user-provider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.live.user.provider.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="live-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.api.ApiWebApplication" />
@@ -138,7 +147,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="UserProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="live-user-provider" />
       <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.user.provider.UserProviderApplication" />
@@ -159,14 +168,16 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.UserProviderApplication" />
       <item itemvalue="Spring Boot.IdGenerateApplication" />
       <item itemvalue="Spring Boot.ApiWebApplication" />
       <item itemvalue="Spring Boot.UserProviderApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.IdGenerateApplication" />
         <item itemvalue="Spring Boot.UserProviderApplication" />
+        <item itemvalue="Spring Boot.IdGenerateApplication" />
+        <item itemvalue="Application.UserProviderApplication" />
         <item itemvalue="Spring Boot.ApiWebApplication" />
       </list>
     </recent_temporary>
@@ -188,7 +199,8 @@
       <workItem from="1692946369138" duration="17250000" />
       <workItem from="1693229176361" duration="22240000" />
       <workItem from="1693468181225" duration="12792000" />
-      <workItem from="1693542997660" duration="1659000" />
+      <workItem from="1693542997660" duration="2323000" />
+      <workItem from="1693557593313" duration="5768000" />
     </task>
     <task id="LOCAL-00001" summary="分布式mysql和redis的配置">
       <option name="closed" value="true" />
@@ -214,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693309594511</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="分布式id发射器">
+      <option name="closed" value="true" />
+      <created>1693544803196</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693544803196</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +255,8 @@
     <MESSAGE value="分布式mysql和redis的配置" />
     <MESSAGE value="redis缓存机制引入" />
     <MESSAGE value="redis延迟双删" />
-    <option name="LAST_COMMIT_MESSAGE" value="redis延迟双删" />
+    <MESSAGE value="分布式id发射器" />
+    <option name="LAST_COMMIT_MESSAGE" value="分布式id发射器" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

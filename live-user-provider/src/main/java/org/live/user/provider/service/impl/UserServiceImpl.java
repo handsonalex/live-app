@@ -3,15 +3,12 @@ package org.live.user.provider.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
 import jakarta.annotation.Resource;
-import org.apache.rocketmq.client.exception.MQBrokerException;
-import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.MQProducer;
 import org.apache.rocketmq.common.message.Message;
-import org.apache.rocketmq.remoting.exception.RemotingException;
 import org.live.common.interfaces.utils.ConvertBeanUtils;
 import org.live.framework.redis.starter.key.UserProviderCacheKeyBuilder;
 import org.live.user.dto.UserDTO;
-import org.live.user.provider.dao.mapper.UserMapper;
+import org.live.user.provider.dao.mapper.IUserMapper;
 import org.live.user.provider.dao.po.UserPO;
 import org.live.user.provider.service.IUserService;
 import org.springframework.dao.DataAccessException;
@@ -33,7 +30,7 @@ import java.util.stream.Collectors;
 @Service
 public class UserServiceImpl implements IUserService {
     @Resource
-    private UserMapper userMapper;
+    private IUserMapper IUserMapper;
 
     @Resource
     private RedisTemplate<String,UserDTO> redisTemplate;
@@ -54,7 +51,7 @@ public class UserServiceImpl implements IUserService {
         if (userDTO != null){
             return userDTO;
         }
-        userDTO = ConvertBeanUtils.convert(userMapper.selectById(userId),UserDTO.class);
+        userDTO = ConvertBeanUtils.convert(IUserMapper.selectById(userId),UserDTO.class);
         if (userDTO != null){
             redisTemplate.opsForValue().set(key,userDTO,30,TimeUnit.MINUTES);
         }
@@ -66,7 +63,7 @@ public class UserServiceImpl implements IUserService {
         if (userDTO == null || userDTO.getUserId() == null) {
             return false;
         }
-        userMapper.updateById(ConvertBeanUtils.convert(userDTO, UserPO.class));
+        IUserMapper.updateById(ConvertBeanUtils.convert(userDTO, UserPO.class));
         String key = userProviderCacheKeyBuilder.buildUserInfoKey(userDTO.getUserId());
         //redis第一次删除
         redisTemplate.delete(key);
@@ -88,7 +85,7 @@ public class UserServiceImpl implements IUserService {
         if (userDTO == null || userDTO.getUserId() == null) {
             return false;
         }
-        userMapper.insert(ConvertBeanUtils.convert(userDTO, UserPO.class));
+        IUserMapper.insert(ConvertBeanUtils.convert(userDTO, UserPO.class));
         return true;
     }
 
@@ -121,7 +118,7 @@ public class UserServiceImpl implements IUserService {
         // 多线程用CopyOnWriteArrayList
         List<UserDTO> dbQueryResult = new CopyOnWriteArrayList<>();
         userIdMap.values().parallelStream().forEach(queryUserIdList -> {
-            dbQueryResult.addAll(ConvertBeanUtils.convertList(userMapper.selectBatchIds(queryUserIdList), UserDTO.class));
+            dbQueryResult.addAll(ConvertBeanUtils.convertList(IUserMapper.selectBatchIds(queryUserIdList), UserDTO.class));
         });
         if (!CollectionUtils.isEmpty(dbQueryResult)){
             //根据业务具体需求判断要不要把mysql查出来的数据存入redis
