@@ -4,14 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="分布式mysql和redis的配置">
+    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="redis延迟双删">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-interface/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-interface/src/main/java/org/live/id/generate/interfaces/IdGenerateRpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/IdGenerateApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/dao/mapper/IdGenerateMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/dao/po/IdGeneratePO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/rpc/IdGenerateRpcImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/service/IdGenerateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/service/bo/LocalSeqIdBo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/service/bo/LocalUnSeqIdBo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/service/impl/IdGenerateServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/interfaces/IUserRpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/interfaces/IUserRpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/rpc/UserRpcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/rpc/UserRpcImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,10 +69,11 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/Code/Study/live-app/live-framework/live-framework-redis.starter/src/main/resources/META-INF/spring",
+    "last_opened_file_path": "D:/Code/Study/live-app/live-id-generate-provider/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,8 +82,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.31839082",
-    "settings.editor.selected.configurable": "Errors",
-    "spring.configuration.checksum": "a3e925291fb64804a6f667dbb3fefdb7",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "spring.configuration.checksum": "68dec8c247740cbd0f7652ea4d755cb2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -78,7 +91,11 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.live.id.generate.service.bo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\Study\live-app\live-id-generate-provider\src\main\resources" />
       <recent name="D:\Code\Study\live-app\live-framework\live-framework-redis.starter\src\main\resources\META-INF\spring" />
       <recent name="D:\Code\Study\live-app\live-api\src\main\resources" />
     </key>
@@ -93,7 +110,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserProviderApplication">
+  <component name="RunManager" selected="Spring Boot.IdGenerateApplication">
     <configuration name="ApiWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="live-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.api.ApiWebApplication" />
@@ -107,8 +124,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="IdGenerateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="live-id-generate-provider" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.id.generate.IdGenerateApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.live.id.generate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" temporary="true" nameIsGenerated="true">
       <module name="live-user-provider" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.user.provider.UserProviderApplication" />
       <extension name="coverage">
         <pattern>
@@ -120,14 +152,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Spring Boot.IdGenerateApplication" />
       <item itemvalue="Spring Boot.ApiWebApplication" />
       <item itemvalue="Spring Boot.UserProviderApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ApiWebApplication" />
+        <item itemvalue="Spring Boot.IdGenerateApplication" />
         <item itemvalue="Spring Boot.UserProviderApplication" />
+        <item itemvalue="Spring Boot.ApiWebApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +186,9 @@
       <workItem from="1692885385851" duration="4387000" />
       <workItem from="1692944825456" duration="1437000" />
       <workItem from="1692946369138" duration="17250000" />
-      <workItem from="1693229176361" duration="10643000" />
+      <workItem from="1693229176361" duration="22240000" />
+      <workItem from="1693468181225" duration="12792000" />
+      <workItem from="1693542997660" duration="1659000" />
     </task>
     <task id="LOCAL-00001" summary="分布式mysql和redis的配置">
       <option name="closed" value="true" />
@@ -156,7 +198,23 @@
       <option name="project" value="LOCAL" />
       <updated>1692972489939</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="redis缓存机制引入">
+      <option name="closed" value="true" />
+      <created>1693296720672</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693296720672</updated>
+    </task>
+    <task id="LOCAL-00003" summary="redis延迟双删">
+      <option name="closed" value="true" />
+      <created>1693309594511</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693309594511</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +233,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="分布式mysql和redis的配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="分布式mysql和redis的配置" />
+    <MESSAGE value="redis缓存机制引入" />
+    <MESSAGE value="redis延迟双删" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis延迟双删" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: live-id-generate-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 175.24.202.36:8848
+        namespace: 051629c5-83a6-4b27-a21d-c2970ee6f08d
