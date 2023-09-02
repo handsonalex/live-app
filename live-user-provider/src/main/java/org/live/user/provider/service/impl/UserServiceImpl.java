@@ -7,6 +7,9 @@ import org.apache.rocketmq.client.producer.MQProducer;
 import org.apache.rocketmq.common.message.Message;
 import org.live.common.interfaces.utils.ConvertBeanUtils;
 import org.live.framework.redis.starter.key.UserProviderCacheKeyBuilder;
+import org.live.user.constants.CacheAsyncDeleteCode;
+import org.live.user.constants.UserProviderTopicNames;
+import org.live.user.dto.UserCacheAsyncDeleteDTO;
 import org.live.user.dto.UserDTO;
 import org.live.user.provider.dao.mapper.IUserMapper;
 import org.live.user.provider.dao.po.UserPO;
@@ -18,10 +21,7 @@ import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
@@ -63,21 +63,29 @@ public class UserServiceImpl implements IUserService {
         if (userDTO == null || userDTO.getUserId() == null) {
             return false;
         }
-        IUserMapper.updateById(ConvertBeanUtils.convert(userDTO, UserPO.class));
-        String key = userProviderCacheKeyBuilder.buildUserInfoKey(userDTO.getUserId());
-        //redis第一次删除
-        redisTemplate.delete(key);
-        Message message = new Message();
-        message.setTopic("user-update-cache");
-        message.setBody(JSON.toJSONString(userDTO).getBytes());
-        //延迟级别，1代表延迟1秒发送
-        message.setDelayTimeLevel(1);
-        try {
-            mqProducer.send(message);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        int updateStatus = IUserMapper.updateById(ConvertBeanUtils.convert(userDTO, UserPO.class));
+        if (updateStatus > -1){
+            String key = userProviderCacheKeyBuilder.buildUserInfoKey(userDTO.getUserId());
+            //redis第一次删除
+            redisTemplate.delete(key);
+            UserCacheAsyncDeleteDTO userCacheAsyncDeleteDTO = new UserCacheAsyncDeleteDTO();
+            userCacheAsyncDeleteDTO.setCode(CacheAsyncDeleteCode.USER_INFO_DELETE.getCode());
+            Map<String,Object> jsonParam = new HashMap<>();
+            jsonParam.put("userId", userDTO.getUserId());
+            userCacheAsyncDeleteDTO.setJson(JSON.toJSONString(jsonParam));
+            Message message = new Message();
+            message.setTopic(UserProviderTopicNames.CACHE_ASYNC_DELETE_TOPIC);
+            message.setBody(JSON.toJSONString(userCacheAsyncDeleteDTO).getBytes());
+            //延迟级别，1代表延迟1秒发送
+            message.setDelayTimeLevel(1);
+            try {
+                mqProducer.send(message);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            return true;
         }
-        return true;
+        return false;
     }
 
     @Override

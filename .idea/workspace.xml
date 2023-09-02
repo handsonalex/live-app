@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="分布式id发射器">
-      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/constants/UserTagFieldNameConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/constants/UserTagsEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/interfaces/IUserTagRpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/utils/TagInfoUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/IUserTagMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/po/UserTagPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/rpc/UserTagRpcImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/IUserTagService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserTagServiceImpl.java" afterDir="false" />
+    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="用户标签功能">
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/constants/CacheAsyncDeleteCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/constants/UserProviderTopicNames.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/dto/UserCacheAsyncDeleteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/dto/UserTagDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/UserProviderCacheKeyBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/UserProviderCacheKeyBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/UserProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/UserProviderApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/IUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/config/RocketMQConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/config/RocketMQConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/IUserTagMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/IUserTagMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/resources/qiyu-db-sharding.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/resources/qiyu-db-sharding.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserTagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserTagServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +197,9 @@
       <workItem from="1693229176361" duration="22240000" />
       <workItem from="1693468181225" duration="12792000" />
       <workItem from="1693542997660" duration="2323000" />
-      <workItem from="1693557593313" duration="5768000" />
+      <workItem from="1693557593313" duration="6441000" />
+      <workItem from="1693660047667" duration="1110000" />
+      <workItem from="1693661830322" duration="9251000" />
     </task>
     <task id="LOCAL-00001" summary="分布式mysql和redis的配置">
       <option name="closed" value="true" />
@@ -234,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693544803196</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="用户标签功能">
+      <option name="closed" value="true" />
+      <created>1693571718454</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1693571718454</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +263,8 @@
     <MESSAGE value="redis缓存机制引入" />
     <MESSAGE value="redis延迟双删" />
     <MESSAGE value="分布式id发射器" />
-    <option name="LAST_COMMIT_MESSAGE" value="分布式id发射器" />
+    <MESSAGE value="用户标签功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户标签功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

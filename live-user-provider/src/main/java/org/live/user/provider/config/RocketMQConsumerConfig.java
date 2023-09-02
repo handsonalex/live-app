@@ -11,12 +11,13 @@ import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.live.framework.redis.starter.key.UserProviderCacheKeyBuilder;
-import org.live.user.dto.UserDTO;
+import org.live.user.constants.CacheAsyncDeleteCode;
+import org.live.user.constants.UserProviderTopicNames;
+import org.live.user.dto.UserCacheAsyncDeleteDTO;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -48,18 +49,21 @@ public class RocketMQConsumerConfig implements InitializingBean {
         defaultMQPushConsumer.setConsumeMessageBatchMaxSize(1);
         defaultMQPushConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         try {
-            defaultMQPushConsumer.subscribe("user-update-cache", "*");
+            defaultMQPushConsumer.subscribe(UserProviderTopicNames.CACHE_ASYNC_DELETE_TOPIC, "");
             defaultMQPushConsumer.setMessageListener(new MessageListenerConcurrently() {
                 @Override
                 public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msg, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-                    String msgStr = new String(msg.get(0).getBody());
-                    UserDTO userDTO = JSON.parseObject(msgStr, UserDTO.class);
-                    if (userDTO == null || userDTO.getUserId() == null){
-                        log.error("用户id为空，参数异常，内容：{}",msgStr);
-                        return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+                    String json = new String(msg.get(0).getBody());
+                    UserCacheAsyncDeleteDTO userCacheAsyncDeleteDTO = JSON.parseObject(json, UserCacheAsyncDeleteDTO.class);
+                    if(CacheAsyncDeleteCode.USER_INFO_DELETE.getCode() == userCacheAsyncDeleteDTO.getCode()){
+                        Long userId = JSON.parseObject(userCacheAsyncDeleteDTO.getJson()).getLong("userId");
+                        redisTemplate.delete(userProviderCacheKeyBuilder.buildUserInfoKey(userId));
+                        log.info("延迟删除用户信息缓存,user id is {}",userId);
+                    }else if (CacheAsyncDeleteCode.USER_TAG_DELETE.getCode() == userCacheAsyncDeleteDTO.getCode()){
+                        Long userId = JSON.parseObject(userCacheAsyncDeleteDTO.getJson()).getLong("userId");
+                        redisTemplate.delete(userProviderCacheKeyBuilder.buildTagKey(userId));
+                        log.info("延迟删除用户标签缓存,user id is {}",userId);
                     }
-                    redisTemplate.delete(userProviderCacheKeyBuilder.buildUserInfoKey(userDTO.getUserId()));
-                    log.info("延迟删除处理，userDTO is {}",userDTO);
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 }
             });
