@@ -63,19 +63,19 @@ public class DubboTest {
     public void testUserRpc() {
         IUserRpc userRpc = (IUserRpc)
                 referMap.get(IUserRpc.class);
-        for(int i=0;i<1000;i++) {
-            userRpc.test();
-        }
+//        for(int i=0;i<1000;i++) {
+//            userRpc.test();
+//        }
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        initConfig();;
-        DubboTest dubboTest = new DubboTest();
-        dubboTest.initProvider();
-        dubboTest.initConsumer();
-        for (;;){
-            dubboTest.userRpc.test();
-            Thread.sleep(3000);
-        }
-    }
+//    public static void main(String[] args) throws InterruptedException {
+//        initConfig();;
+//        DubboTest dubboTest = new DubboTest();
+//        dubboTest.initProvider();
+//        dubboTest.initConsumer();
+//        for (;;){
+//            dubboTest.userRpc.test();
+//            Thread.sleep(3000);
+//        }
+//    }
 }

@@ -7,6 +7,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>live-user-provider</artifactId>
+    <version>1.0.2</version>
     <properties>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,7 +23,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>
         <rocketmq.client.version>5.1.3</rocketmq.client.version>
-
+        <arthas.zip.address>/env/arthas</arthas.zip.address>
     </properties>
     <dependencies>
         <dependency>
@@ -33,6 +34,15 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <version>3.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -107,15 +117,50 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>${artifactId}-docker</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <executions>
+                    <!-- 当 mvn 执行 install 操作的时候，执行 docker 的 build-->
+                    <execution>
+                        <id>build</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <classifier>exec</classifier>
+                    <imageTags>
+                        <imageTag>${project.version}</imageTag>
+                    </imageTags>
+                    <imageName>${project.build.finalName}</imageName>
+                    <!--指定 Dockerfile 文件的位置-->
+                    <dockerDirectory>${project.basedir}/docker</dockerDirectory>
+                    <resources>
+                        <!-- 指定 jar 包路径，这里对应 Dockerfile 中复制 jar 包到 docker 容器指定目录配置，也可以写到 Docokerfile 中 -->
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <!-- 将下边目录的内容，拷贝到 docker 镜像中 -->
+                           <directory>${project.build.directory}</directory>
+                           <include>${project.build.finalName}.jar</include>
+                        </resource>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${arthas.zip.address}</directory>
+                            <include>arthas-bin.zip</include>
+                        </resource>
+                    </resources>
                 </configuration>
             </plugin>
-        </plugins>
-    </build>
+       </plugins>
+   </build>
 
 </project>

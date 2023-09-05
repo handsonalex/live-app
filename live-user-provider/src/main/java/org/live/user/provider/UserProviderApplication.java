@@ -45,11 +45,11 @@ public class UserProviderApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Long userId = 1004L;
-        UserDTO userDTO =userService.getByUserId(userId);
+//        UserDTO userDTO =userService.getByUserId(userId);
 //        userDTO.setNickName("test-nick-name");
 //        userService.updateUserInfo(userDTO);
 
-        System.out.println(userTagService.containTag(userId, UserTagsEnum.IS_OLD_USER));
+//        System.out.println(userTagService.containTag(userId, UserTagsEnum.IS_OLD_USER));
 //        System.out.println(userTagService.setTag(userId, UserTagsEnum.IS_OLD_USER));
 //        System.out.println(userTagService.containTag(userId, UserTagsEnum.IS_OLD_USER));
 //        System.out.println(userTagService.cancelTag(userId, UserTagsEnum.IS_OLD_USER));
