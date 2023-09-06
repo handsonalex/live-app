@@ -1,1 +1,1 @@
-org.live.framework.datasource.config.ShardingJdbcDatasourceAutoInitConnectionConfig
+org.live.framework.datasource.starter.config.ShardingJdbcDatasourceAutoInitConnectionConfig

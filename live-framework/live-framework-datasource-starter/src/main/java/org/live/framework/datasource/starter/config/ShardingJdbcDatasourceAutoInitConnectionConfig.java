@@ -1,4 +1,4 @@
-package org.live.framework.datasource.config;
+package org.live.framework.datasource.starter.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
