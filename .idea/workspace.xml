@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="二次开发shardingjdbc，引入nacos配置">
-      <change afterPath="$PROJECT_DIR$/live-api/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-api/docker/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-api/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-user-provider/docker/docker-compose.yml" afterDir="false" />
+    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="1、live-api和user-provider集群部署&#10;2、live-api更新logback&#10;3、live-api引入nacos配置中心">
+      <change afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/vo/TestVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-gateway/src/main/java/org/live/gateway/GatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-gateway/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-gateway/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/ApiWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/ApiWebApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-api/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-api/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/live-api/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/docker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,17 +77,17 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/Code/Study/live-app/live-api/src/main/resources",
+    "last_opened_file_path": "D:/Code/Study/live-app/live-gateway/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.31839082",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "spring.configuration.checksum": "68dec8c247740cbd0f7652ea4d755cb2",
+    "spring.configuration.checksum": "c47c42faf8ceb5b04d33cd1683f606a5",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -103,6 +99,7 @@
       <recent name="org.live.id.generate.service.bo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Code\Study\live-app\live-gateway\src\main\resources" />
       <recent name="D:\Code\Study\live-app\live-api\src\main\resources" />
       <recent name="D:\Code\Study\live-app\live-api" />
       <recent name="D:\Code\Study\live-app\live-id-generate-provider\src\main\resources" />
@@ -120,7 +117,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiWebApplication">
+  <component name="RunManager" selected="Docker.docker: Compose Deployment">
     <configuration name="ApiWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="live-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.api.ApiWebApplication" />
@@ -134,13 +131,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IdGenerateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="live-id-generate-provider" />
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="live-gateway" />
       <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.id.generate.IdGenerateApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.gateway.GatewayApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.live.id.generate.*" />
+          <option name="PATTERN" value="org.live.gateway.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -199,17 +196,17 @@
     <list>
       <item itemvalue="Docker.docker: Compose Deployment" />
       <item itemvalue="Docker.docker: Compose Deployment (1)" />
-      <item itemvalue="Spring Boot.IdGenerateApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.ApiWebApplication" />
       <item itemvalue="Spring Boot.UserProviderApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ApiWebApplication" />
-        <item itemvalue="Docker.docker: Compose Deployment (1)" />
+        <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="Docker.docker: Compose Deployment" />
+        <item itemvalue="Docker.docker: Compose Deployment (1)" />
+        <item itemvalue="Spring Boot.ApiWebApplication" />
         <item itemvalue="Spring Boot.UserProviderApplication" />
-        <item itemvalue="Spring Boot.IdGenerateApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +237,8 @@
       <workItem from="1693999514940" duration="6510000" />
       <workItem from="1694008401008" duration="1994000" />
       <workItem from="1694010444419" duration="4374000" />
-      <workItem from="1694053423044" duration="4257000" />
+      <workItem from="1694053423044" duration="6991000" />
+      <workItem from="1694069121512" duration="5285000" />
     </task>
     <task id="LOCAL-00001" summary="分布式mysql和redis的配置">
       <option name="closed" value="true" />
@@ -314,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693990277834</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="1、live-api和user-provider集群部署&#10;2、live-api更新logback&#10;3、live-api引入nacos配置中心">
+      <option name="closed" value="true" />
+      <created>1694066881113</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694066881113</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +347,8 @@
     <MESSAGE value="1、实现容器化部署&#10;2、引入nacos配置中心" />
     <MESSAGE value="删除多余配置文件" />
     <MESSAGE value="二次开发shardingjdbc，引入nacos配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="二次开发shardingjdbc，引入nacos配置" />
+    <MESSAGE value="1、live-api和user-provider集群部署&#10;2、live-api更新logback&#10;3、live-api引入nacos配置中心" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、live-api和user-provider集群部署&#10;2、live-api更新logback&#10;3、live-api引入nacos配置中心" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
