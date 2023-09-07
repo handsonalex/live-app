@@ -2,7 +2,7 @@ FROM openjdk:17-jdk-alpine
 VOLUME /tmp
 #将arthus的压缩包拷贝到docker容器中
 COPY /arthas-bin.zip /opts/arthas-bin.zip
-ADD handsonalex/live-user-provider.jar app.jar
+ADD handsonalex/live-api.jar app.jar
 ENV JAVA_OPTS="\
 -server \
 -Xmx1g \

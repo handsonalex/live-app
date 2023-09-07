@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <springProperty name="APP_NAME" scope="context" source="spring.application.name" defaultValue="live-user-provider"/>
+    <springProperty name="APP_NAME" scope="context" source="spring.application.name" defaultValue="live-api"/>
     <define name="index" class="org.live.common.interfaces.utils.IpLogConversionRule"/>
     <property name="LOG_HOME" value="/tmp/logs/${APP_NAME}/${index}"/>
     <property name="LOG_PATTERN" value="[%white(%d{yyyy-MM-dd HH:mm:ss.SSS}) -%highlight(%5p)] %yellow(%-40.40logger{39}) %white(:%msg%n)"/>
