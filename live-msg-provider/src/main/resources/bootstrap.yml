@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: live-msg-provider
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 175.24.202.36:8848
+        namespace: 051629c5-83a6-4b27-a21d-c2970ee6f08d
+      config:
+        import-check:
+          enabled: false
+        file-extension: yaml
+        server-addr: 175.24.202.36:8848
+        namespace: 051629c5-83a6-4b27-a21d-c2970ee6f08d
+        shared-configs:
+          - ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+
