@@ -16,4 +16,5 @@ spring:
         namespace: 051629c5-83a6-4b27-a21d-c2970ee6f08d
         shared-configs:
           - ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-
+server:
+  port: 8081

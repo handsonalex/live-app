@@ -118,18 +118,15 @@ public class IdGenerateServiceImpl implements IdGenerateService, InitializingBea
             if (semaphore.tryAcquire()){
                 log.info("开始尝试进行本地id段同步");
                 //异步进行同步id操作
-                threadPoolExecutor.execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            IdGeneratePO idGeneratePO = idGenerateMapper.selectById(localSeqIdBo.getId());
-                            tryUpdateMySqlRecord(idGeneratePO);
-                            log.info("本地id段的同步完成,id is {}",localSeqIdBo.getId());
-                        }catch (Exception e){
-                            log.error("[refreshLocalUnSeqId] error is ",e);
-                        }finally {
-                            semaphoreMap.get(localSeqIdBo.getId()).release();
-                        }
+                threadPoolExecutor.execute(() -> {
+                    try {
+                        IdGeneratePO idGeneratePO = idGenerateMapper.selectById(localSeqIdBo.getId());
+                        tryUpdateMySqlRecord(idGeneratePO);
+                        log.info("本地id段的同步完成,id is {}",localSeqIdBo.getId());
+                    }catch (Exception e){
+                        log.error("[refreshLocalUnSeqId] error is ",e);
+                    }finally {
+                        semaphoreMap.get(localSeqIdBo.getId()).release();
                     }
                 });
             }

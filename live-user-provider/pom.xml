@@ -106,6 +106,12 @@
             <artifactId>rocketmq-client</artifactId>
             <version>${rocketmq.client.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.idea</groupId>
+            <artifactId>live-id-generate-interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <finalName>handsonalex/${artifactId}</finalName>

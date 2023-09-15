@@ -4,41 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="gateway引入">
-      <change afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/vo/TestVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/key/MsgProviderCacheKeyBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-interface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-interface/src/main/java/org/live/msg/dto/MsgCheckDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-interface/src/main/java/org/live/msg/enums/MsgSendResultEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-interface/src/main/java/org/live/msg/interfaces/ISmsRpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/docker/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/docker/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/MsgProviderApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/config/ThreadPoolManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/dao/mapper/SmsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/dao/po/SmsPO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/rpc/SmsRpcImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/service/ISmsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/service/impl/SmsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-msg-provider/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="新增短信发送模块">
+      <change afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/UserLoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/service/IUserLoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/service/impl/UserLoginServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/vo/UserLoginVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-common-interface/src/main/java/org/live/common/interfaces/enums/CommonStatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-common-interface/src/main/java/org/live/common/interfaces/utils/DESUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-common-interface/src/main/java/org/live/common/interfaces/vo/WebResponseVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-id-generate-interface/src/main/java/org/live/id/generate/enums/IdTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/dto/UserLoginDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/dto/UserPhoneDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-interface/src/main/java/org/live/user/interfaces/IUserPhoneRpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/mapper/IUserPhoneMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/dao/po/UserPhonePO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/rpc/UserPhoneRpcImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/IUserPhoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserPhoneServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/config/IGenericJackson2JsonRedisSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/config/IGenericJackson2JsonRedisSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/config/MapperFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/config/MapperFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/RedisKeyBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/key/RedisKeyBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/RedisKeyLoadMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/key/RedisKeyLoadMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/java/org/live/framework/redis/starter/key/UserProviderCacheKeyBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/key/UserProviderCacheKeyBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis.starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-id-generate-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-id-generate-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-api/src/main/java/org/live/api/vo/TestVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-api/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/live-api/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-common-interface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-common-interface/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/key/UserProviderCacheKeyBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/key/UserProviderCacheKeyBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/IdGenerateApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/IdGenerateApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/rpc/IdGenerateRpcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/rpc/IdGenerateRpcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/service/impl/IdGenerateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-id-generate-provider/src/main/java/org/live/id/generate/service/impl/IdGenerateServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/MsgProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/MsgProviderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/rpc/SmsRpcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/rpc/SmsRpcImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live-user-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/UserProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/UserProviderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserTagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-user-provider/src/main/java/org/live/user/provider/service/impl/UserTagServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +46,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -91,32 +89,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/Code/Study/live-app/live-msg-interface/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.31839082",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "spring.configuration.checksum": "c47c42faf8ceb5b04d33cd1683f606a5",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Programming/CODE/AlgorithmsExercise&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31839082&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;49d551be9c7f90b55200886cb9c55d32&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -135,15 +133,37 @@
       <recent name="D:\Code\Study\live-app\live-framework\live-framework-datasource-starter\src\main\resources\META-INF" />
       <recent name="D:\Code\Study\live-app\live-user-provider\src\main\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.live.api.controller" />
+      <recent name="org.live.api.vo" />
+      <recent name="org.live.api.service.impl" />
+      <recent name="org.live.api.service" />
+      <recent name="org.live.common.interfaces.vo" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
+        <option value="Application" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
+    <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Spring Boot.MsgProviderApplication">
+  <component name="RunManager" selected="Application.IdGenerateServiceImpl">
+    <configuration name="IdGenerateServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.live.id.generate.service.impl.IdGenerateServiceImpl" />
+      <module name="live-id-generate-provider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.live.id.generate.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="live-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.api.ApiWebApplication" />
@@ -171,6 +191,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="IdGenerateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="live-id-generate-provider" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.id.generate.IdGenerateApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.live.id.generate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MsgProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="live-msg-provider" />
       <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
@@ -181,6 +215,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="live-user-provider" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.user.provider.UserProviderApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -203,36 +245,21 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="live-api/docker/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="live-user-provider/docker/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Docker.docker: Compose Deployment" />
-      <item itemvalue="Docker.docker: Compose Deployment (1)" />
+      <item itemvalue="Application.IdGenerateServiceImpl" />
+      <item itemvalue="Spring Boot.UserProviderApplication" />
+      <item itemvalue="Spring Boot.IdGenerateApplication" />
       <item itemvalue="Spring Boot.MsgProviderApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.ApiWebApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.MsgProviderApplication" />
+        <item itemvalue="Application.IdGenerateServiceImpl" />
         <item itemvalue="Spring Boot.ApiWebApplication" />
+        <item itemvalue="Spring Boot.MsgProviderApplication" />
         <item itemvalue="Spring Boot.GatewayApplication" />
-        <item itemvalue="Docker.docker: Compose Deployment" />
-        <item itemvalue="Docker.docker: Compose Deployment (1)" />
+        <item itemvalue="Spring Boot.IdGenerateApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +292,15 @@
       <workItem from="1694010444419" duration="4374000" />
       <workItem from="1694053423044" duration="6991000" />
       <workItem from="1694069121512" duration="9741000" />
-      <workItem from="1694148159308" duration="12953000" />
+      <workItem from="1694148159308" duration="15866000" />
+      <workItem from="1694265403541" duration="507000" />
+      <workItem from="1694265919890" duration="24000" />
+      <workItem from="1694266006164" duration="43463000" />
+      <workItem from="1694582942546" duration="13000" />
+      <workItem from="1694615255307" duration="4084000" />
+      <workItem from="1694700465797" duration="3255000" />
+      <workItem from="1694750537468" duration="1758000" />
+      <workItem from="1694762786187" duration="655000" />
     </task>
     <task id="LOCAL-00001" summary="分布式mysql和redis的配置">
       <option name="closed" value="true" />
@@ -355,7 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694098605993</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="新增短信发送模块">
+      <option name="closed" value="true" />
+      <created>1694262831778</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1694262831778</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,23 +427,8 @@
     <MESSAGE value="二次开发shardingjdbc，引入nacos配置" />
     <MESSAGE value="1、live-api和user-provider集群部署&#10;2、live-api更新logback&#10;3、live-api引入nacos配置中心" />
     <MESSAGE value="gateway引入" />
-    <option name="LAST_COMMIT_MESSAGE" value="gateway引入" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/service/impl/SmsServiceImpl.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/service/impl/SmsServiceImpl.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="新增短信发送模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增短信发送模块" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

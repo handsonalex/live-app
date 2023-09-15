@@ -142,8 +142,7 @@ public class UserTagServiceImpl implements IUserTagService {
             return null;
         }
         userTagDTO = ConvertBeanUtils.convert(userTagPO, UserTagDTO.class);
-        redisTemplate.opsForValue().set(redisKey,userTagDTO);
-        redisTemplate.expire(redisKey, 30, TimeUnit.MINUTES);
+        redisTemplate.opsForValue().set(redisKey,userTagDTO,30,TimeUnit.MINUTES);
         return userTagDTO;
     }
 }

@@ -38,7 +38,7 @@ public class CorsConfig {
         corsConfiguration.addAllowedHeader("*");
         // 允许任何方法
         corsConfiguration.addAllowedMethod("*");
-
+        corsConfiguration.setAllowCredentials(true);
         return corsConfiguration;
     }
 }
