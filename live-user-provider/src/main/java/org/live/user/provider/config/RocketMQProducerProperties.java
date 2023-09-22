@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * Description: 生产者配置信息
  * Date: 16:18 2023/8/29
  */
-@ConfigurationProperties(prefix = "qiyu.rmq.producer")
+@ConfigurationProperties(prefix = "app.rmq.producer")
 @Configuration
 @Data
 public class RocketMQProducerProperties {

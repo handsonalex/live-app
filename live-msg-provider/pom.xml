@@ -13,6 +13,7 @@
         <live-msg-interface.version>1.0-SNAPSHOT</live-msg-interface.version>
         <live-redis-starter.version>1.0-SNAPSHOT</live-redis-starter.version>
         <live-common-interface.version>1.0-SNAPSHOT</live-common-interface.version>
+        <cloopen-sms.version>1.0.4</cloopen-sms.version>
     </properties>
     <dependencies>
         <dependency>
@@ -78,6 +79,11 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cloopen</groupId>
+            <artifactId>java-sms-sdk</artifactId>
+            <version>${cloopen-sms.version}</version>
         </dependency>
     </dependencies>
     <build>

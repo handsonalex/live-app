@@ -4,33 +4,12 @@ services:
     container_name: live-msg-provider-docker-1
     image: 'handsonalex/live-msg-provider:1.0.2'
     ports:
-      - "9091:9091"
+      - "9093:9093"
     volumes:
       - /tmp/logs/live-msg-provider:/tmp/logs/live-msg-provider
   #注意 xss 参数是设置线程的栈空间大小，这里至少要比 136k 大，否则会出错
     environment:
       - DUBBO_IP_TO_REGISTRY=192.168.31.105
-      - DUBBO_PORT_TO_REGISTRY=9091
-      - DUBBO_PORT_TO_BIND=9091
+      - DUBBO_PORT_TO_REGISTRY=9093
+      - DUBBO_PORT_TO_BIND=9093
       - JAVA_OPTS=-XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms512m -Xmx512m -Xmn128m -Xss256k
-#    extra_hosts:
-#      - 'qiyu.nacos.com:175.178.130.183'
-#      - 'cloud.db:175.178.130.183'
-#      - 'qiyu.rmq.com:192.168.40.167'
-  live-msg-provider-docker-2:
-    container_name: live-msg-provider-docker-2
-    image: 'handsonalex/live-msg-provider:1.0.2'
-    ports:
-      - "9092:9092"
-    volumes:
-      - /tmp/logs/live-msg-provider:/tmp/logs/live-msg-provider
-    #注意 xss 参数是设置线程的栈空间大小，这里至少要比 136k 大，否则会出错
-    environment:
-      - DUBBO_IP_TO_REGISTRY=192.168.31.105
-      - DUBBO_PORT_TO_REGISTRY=9092
-      - DUBBO_PORT_TO_BIND=9092
-      - JAVA_OPTS=-XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms512m -Xmx512m -Xmn128m -Xss256k
-#    extra_hosts:
-#      - 'qiyu.nacos.com:175.178.130.183'
-#      - 'cloud.db:175.178.130.183'
-#      - 'qiyu.rmq.com:192.168.40.167'

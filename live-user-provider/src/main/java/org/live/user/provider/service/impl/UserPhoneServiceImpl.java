@@ -2,6 +2,7 @@ package org.live.user.provider.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.live.common.interfaces.enums.CommonStatusEnum;
@@ -27,6 +28,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class UserPhoneServiceImpl implements IUserPhoneService {
 
     @Resource
@@ -108,6 +110,7 @@ public class UserPhoneServiceImpl implements IUserPhoneService {
         }
         userPhoneDTO = this.queryByPhoneFromDB(phone);
         if (userPhoneDTO != null) {
+            userPhoneDTO.setPhone(DESUtils.decrypt(userPhoneDTO.getPhone()));
             redisTemplate.opsForValue().set(redisKey, userPhoneDTO,30,TimeUnit.MINUTES);
             return userPhoneDTO;
         }
@@ -152,9 +155,13 @@ public class UserPhoneServiceImpl implements IUserPhoneService {
     }
 
     public UserPhoneDTO queryByPhoneFromDB(String phone){
+        long start = System.currentTimeMillis();
         UserPhonePO userPhonePO = userPhoneMapper.selectOne(new LambdaQueryWrapper<UserPhonePO>()
-                .eq(UserPhonePO::getPhone, DESUtils.encrypt(phone)).eq(UserPhonePO::getStatus, CommonStatusEnum.VALID_STATUS.getCode())
+                .eq(UserPhonePO::getPhone, DESUtils.encrypt(phone))
+                .eq(UserPhonePO::getStatus, CommonStatusEnum.VALID_STATUS.getCode())
                 .last("limit 1"));
+        long end = System.currentTimeMillis();
+        log.warn("查询耗时,{}",end - start);
         return ConvertBeanUtils.convert(userPhonePO, UserPhoneDTO.class);
     }
 }

@@ -1,3 +1,4 @@
 org.live.framework.redis.starter.config.RedisConfig
 org.live.framework.redis.starter.key.UserProviderCacheKeyBuilder
 org.live.framework.redis.starter.key.MsgProviderCacheKeyBuilder
+org.live.framework.redis.starter.key.AccountProviderCacheKeyBuilder

@@ -1,0 +1,14 @@
+version: '3'
+services:
+  live-account-provider-1:
+    container_name: live-account-provider-1
+    image: 'registry.baidubce.com/live-test/live-account-provider-docker:1.0.1'
+    ports:
+      - "9095:9095"
+    volumes:
+      - /tmp/logs/live-account-provider:/tmp/logs/live-account-provider
+    environment:
+      - DUBBO_IP_TO_REGISTRY=192.168.31.105
+      - DUBBO_PORT_TO_REGISTRY=9095
+      - DUBBO_PORT_TO_BIND=9095
+      - JAVA_OPTS=-XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms512m -Xmx512m -Xmn128m -Xss256k

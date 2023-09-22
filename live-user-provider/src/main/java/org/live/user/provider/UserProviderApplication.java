@@ -1,12 +1,15 @@
 package org.live.user.provider;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.live.user.constants.UserTagsEnum;
 import org.live.user.dto.UserDTO;
 import org.live.user.dto.UserLoginDTO;
+import org.live.user.provider.dao.mapper.IUserMapper;
+import org.live.user.provider.dao.po.UserPO;
 import org.live.user.provider.service.IUserPhoneService;
 import org.live.user.provider.service.IUserService;
 import org.live.user.provider.service.IUserTagService;
@@ -39,6 +42,9 @@ public class UserProviderApplication implements CommandLineRunner {
 
     @Resource
     private IUserPhoneService userPhoneService;
+
+    @Resource
+    IUserMapper userMapper;
 
     public static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(UserProviderApplication.class);
