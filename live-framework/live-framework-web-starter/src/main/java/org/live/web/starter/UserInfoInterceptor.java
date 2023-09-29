@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 public class UserInfoInterceptor implements HandlerInterceptor {
 
-    //所有web请求来到这里的时候，都要被拦截
+    //所有web请求来到这里的时候，都要被拦截，controller之前执行
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String userIdStr = request.getHeader(GatewayHeaderEnum.USER_LOGIN_ID.getName());
@@ -30,6 +30,7 @@ public class UserInfoInterceptor implements HandlerInterceptor {
         return true;
     }
 
+    //controller之后执行
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         RequestContext.clear();
