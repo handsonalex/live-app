@@ -1,7 +1,7 @@
 package org.live.im.core.server.common;
 
 import lombok.Data;
-import org.live.im.interfaces.ImConstants;
+import org.live.im.constants.ImConstants;
 
 import java.io.Serial;
 import java.io.Serializable;

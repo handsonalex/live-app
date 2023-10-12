@@ -1,4 +1,4 @@
-package imClient;
+package imClient.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

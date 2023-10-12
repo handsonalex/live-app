@@ -7,4 +7,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>live-im-interface</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 </project>

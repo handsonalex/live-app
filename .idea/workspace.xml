@@ -4,30 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="用户登录模块">
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/NettyImServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/common/ImMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/common/ImMsgDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/common/ImMsgEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/ImHandlerFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/ImServerCoreHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/SimplyHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/BizImMsgHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/HeartBeatMsgHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/ImHandlerFactoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/LoginMsgHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/LogoutMsgHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/test/java/bio/BioClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/test/java/imClient/ClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/test/java/imClient/ImClientApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-interface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-interface/src/main/java/org/live/im/interfaces/ImConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/live-im-interface/src/main/java/org/live/im/interfaces/ImMsgCodeEnum.java" afterDir="false" />
+    <list default="true" id="b59bd20f-031e-434f-8ca5-c498b62d4271" name="Changes" comment="im模块netty框架搭建">
+      <change afterPath="$PROJECT_DIR$/live-common-interface/src/main/java/org/live/common/interfaces/topic/ImCoreServerProviderTopicNames.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-mq-starter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-mq-starter/src/main/java/org/live/framework/mq/starter/producer/RockertMQProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-mq-starter/src/main/java/org/live/framework/mq/starter/properties/RocketMQConsumerProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-mq-starter/src/main/java/org/live/framework/mq/starter/properties/RocketMQProducerProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-mq-starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/key/ImCoreServerProviderCacheKeyBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/key/ImProviderCacheKeyBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/ImCoreServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/common/ChannelHandlerContextCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/common/ImContextAttr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/common/ImContextUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/starter/NettyImServerStarter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/test/java/imClient/handler/ImClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-core-server/src/test/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-interface/src/main/java/org/live/im/constants/AppIdEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-interface/src/main/java/org/live/im/dto/ImMsgBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-interface/src/main/java/org/live/im/interfaces/ImTokenRpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-provider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-provider/src/main/java/org/live/im/provider/ImProviderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-provider/src/main/java/org/live/im/provider/rpc/ImTokenRpcImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-provider/src/main/java/org/live/im/provider/service/ImTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-provider/src/main/java/org/live/im/provider/service/impl/ImTokenServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-provider/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-im-provider/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/consumer/ImMsgConsumer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-web-starter/src/main/java/org/live/web/starter/UserInfoInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-web-starter/src/main/java/org/live/web/starter/UserInfoInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/java/org/live/framework/redis/starter/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" beforeDir="false" afterPath="$PROJECT_DIR$/live-framework/live-framework-redis-starter/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/NettyImServerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/common/ImMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/common/ImMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/common/ImMsgDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/common/ImMsgDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/ImServerCoreHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/ImServerCoreHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/BizImMsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/BizImMsgHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/HeartBeatMsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/HeartBeatMsgHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/ImHandlerFactoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/ImHandlerFactoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/LoginMsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/LoginMsgHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/LogoutMsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/src/main/java/org/live/im/core/server/handler/impl/LogoutMsgHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/test/java/imClient/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/src/test/java/imClient/handler/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-core-server/src/test/java/imClient/ImClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-core-server/src/test/java/imClient/ImClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-interface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-interface/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-interface/src/main/java/org/live/im/interfaces/ImConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-interface/src/main/java/org/live/im/constants/ImConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-im-interface/src/main/java/org/live/im/interfaces/ImMsgCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-im-interface/src/main/java/org/live/im/constants/ImMsgCodeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-msg-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/live-msg-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/MsgProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/live-msg-provider/src/main/java/org/live/msg/provider/MsgProviderApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +87,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -82,33 +110,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Code/Study/live-app/live-im-core-server/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.31839082&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;49d551be9c7f90b55200886cb9c55d32&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;D:/Code/Study/live-app/live-account-interface/src/main/java/package-info.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/Code/Study/live-app/live-framework/live-framework-mq-starter/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.31839082",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "49d551be9c7f90b55200886cb9c55d32",
+    "two.files.diff.last.used.file": "D:/Code/Study/live-app/live-account-interface/src/main/java/package-info.java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -117,23 +145,25 @@
       <recent name="org.live.id.generate.service.bo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Code\Study\live-app\live-im-core-server\src\main\resources" />
-      <recent name="D:\Code\Study\live-app\live-framework\live-framework-web-starter\src\main\resources" />
-      <recent name="D:\Code\Study\live-app\live-framework\live-framework-web-starter\src\main\java\org\live\web\starter" />
-      <recent name="D:\Code\Study\live-app\live-id-generate-provider\src\main\resources" />
-      <recent name="D:\Code\Study\live-app\live-id-generate-provider" />
+      <recent name="D:\Code\Study\live-app\live-framework\live-framework-mq-starter\src\main\resources" />
+      <recent name="D:\Code\Study\live-app\live-framework\live-framework-mq-starter\src\main\java\org\live\framework\mq\starter\properties" />
+      <recent name="D:\Code\Study\live-app\live-im-core-server\src\test\resources" />
+      <recent name="D:\Code\Study\live-app\live-im-provider\src\main\resources" />
+      <recent name="D:\Code\Study\live-app\live-im-interface\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\Study\live-app\live-framework\live-framework-mq-starter\src\main\resources\META-INF" />
+      <recent name="D:\Code\Study\live-app\live-im-provider\src\main\resources" />
       <recent name="D:\Code\Study\live-app\live-framework\live-framework-web-starter\src\main\resources\META-INF" />
       <recent name="D:\Code\Study\live-app\live-framework\live-framework-datasource-starter\src\main\resources\META-INF" />
       <recent name="D:\Code\Study\live-app\live-user-provider\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.live.common.interfaces.topic" />
+      <recent name="org.live.framework.redis.starter.key" />
       <recent name="org.live.im.interfaces" />
       <recent name="bio" />
       <recent name="org.live.web.starter" />
-      <recent name="org.live.common.interfaces.enums" />
-      <recent name="org.live.gateway.properties" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -179,33 +209,7 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Application.ImClientApplication">
-    <configuration name="BioClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bio.BioClient" />
-      <module name="live-im-core-server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bio.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ImClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="imClient.ImClientApplication" />
-      <module name="live-im-core-server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="imClient.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.ImClientApplication">
     <configuration name="NettyImServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.live.im.core.server.NettyImServerApplication" />
       <module name="live-im-core-server" />
@@ -219,16 +223,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="live-account-provider" />
       <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.account.provider.AccountProviderApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.live.account.provider.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -274,6 +272,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ImClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="live-im-core-server" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="imClient.ImClientApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="imClient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImCoreServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="live-im-core-server" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.im.core.server.ImCoreServerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.live.im.core.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="live-im-provider" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.im.provider.ImProviderApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.live.im.provider.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MsgProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="live-msg-provider" />
       <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
@@ -281,6 +321,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.live.msg.provider.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NettyImServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="live-im-core-server" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.live.im.core.server.NettyImServerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.live.im.core.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -317,8 +371,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.ImClientApplication" />
-      <item itemvalue="Application.BioClient" />
       <item itemvalue="Application.NettyImServerApplication" />
       <item itemvalue="Spring Boot.UserProviderApplication" />
       <item itemvalue="Spring Boot.IdGenerateApplication" />
@@ -326,13 +378,18 @@
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.ApiWebApplication" />
       <item itemvalue="Spring Boot.AccountProviderApplication" />
+      <item itemvalue="Spring Boot.ImClientApplication" />
+      <item itemvalue="Spring Boot.ImCoreServerApplication" />
+      <item itemvalue="Spring Boot.ImProviderApplication" />
+      <item itemvalue="Spring Boot.NettyImServerApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ImClientApplication" />
+        <item itemvalue="Spring Boot.ImClientApplication" />
+        <item itemvalue="Spring Boot.ImCoreServerApplication" />
+        <item itemvalue="Spring Boot.ImProviderApplication" />
+        <item itemvalue="Spring Boot.NettyImServerApplication" />
         <item itemvalue="Application.NettyImServerApplication" />
-        <item itemvalue="Application.BioClient" />
-        <item itemvalue="Spring Boot.AccountProviderApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -383,7 +440,12 @@
       <workItem from="1695465128214" duration="1700000" />
       <workItem from="1695477870065" duration="13463000" />
       <workItem from="1695891227430" duration="2489000" />
-      <workItem from="1695972167555" duration="1675000" />
+      <workItem from="1695972167555" duration="4516000" />
+      <workItem from="1695978691977" duration="9640000" />
+      <workItem from="1696049817895" duration="4098000" />
+      <workItem from="1696818371553" duration="7865000" />
+      <workItem from="1697094096998" duration="1582000" />
+      <workItem from="1697097420137" duration="13156000" />
     </task>
     <task id="LOCAL-00001" summary="分布式mysql和redis的配置">
       <option name="closed" value="true" />
@@ -489,7 +551,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694765572985</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="im模块netty框架搭建">
+      <option name="closed" value="true" />
+      <created>1695973927433</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1695973927433</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +590,8 @@
     <MESSAGE value="gateway引入" />
     <MESSAGE value="新增短信发送模块" />
     <MESSAGE value="用户登录模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户登录模块" />
+    <MESSAGE value="im模块netty框架搭建" />
+    <option name="LAST_COMMIT_MESSAGE" value="im模块netty框架搭建" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,7 +3,7 @@ package org.live.im.core.server.common;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
-import org.live.im.interfaces.ImConstants;
+import org.live.im.constants.ImConstants;
 
 import java.util.List;
 
