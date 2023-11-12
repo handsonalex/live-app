@@ -26,6 +26,9 @@
         <module>live-im-interface</module>
         <module>live-im-provider</module>
         <module>live-framework/live-framework-mq-starter</module>
+        <module>live-im-core-server-interfaces</module>
+        <module>live-im-router-interfaces</module>
+        <module>live-im-router-provider</module>
     </modules>
 
     <properties>

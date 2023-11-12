@@ -1,5 +1,6 @@
 package org.live.im.core.server;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Date: 22:09 2023/9/24
  */
 @SpringBootApplication
+@EnableDubbo
 public class ImCoreServerApplication {
 
 

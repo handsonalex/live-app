@@ -10,8 +10,10 @@ import org.live.im.constants.ImMsgCodeEnum;
 import org.live.im.core.server.common.ImContextUtils;
 import org.live.im.core.server.common.ImMsg;
 import org.live.im.core.server.handler.SimplyHandler;
+import org.live.im.core.server.interfaces.constants.ImCoreServerConstants;
 import org.live.im.dto.ImMsgBody;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -25,6 +27,9 @@ public class HeartBeatMsgHandler implements SimplyHandler {
     @Resource
     private ImCoreServerProviderCacheKeyBuilder cacheKeyBuilder;
 
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
+
     @Override
     public void handler(ChannelHandlerContext ctx, ImMsg imMsg) {
         //心跳包基本校验
@@ -32,6 +37,7 @@ public class HeartBeatMsgHandler implements SimplyHandler {
         Integer appId = ImContextUtils.getAppId(ctx);
         if (userId == null || appId == null) {
             log.error("attr error,imMsg is {}",imMsg);
+            //有可能是错误的消息包导致，直接放弃链接
             ctx.close();
             throw new IllegalArgumentException("attr is error");
         }
@@ -42,6 +48,8 @@ public class HeartBeatMsgHandler implements SimplyHandler {
         //zSet集合存储心跳记录，基于userId取模，ket(userId)-score(心跳时间)
         this.removeExpireRecord(redisKey);
         redisTemplate.expire(redisKey, 5, TimeUnit.MINUTES);
+        //延长用户之前保存的ip绑定记录
+        stringRedisTemplate.expire(ImCoreServerConstants.IM_BIND_IP_KEY + appId + userId,ImConstants.DEFAULT_HEART_BEAT_GAP * 2,TimeUnit.SECONDS);
         ImMsgBody msgBody = new ImMsgBody();
         msgBody.setUserId(userId);
         msgBody.setAppId(appId);

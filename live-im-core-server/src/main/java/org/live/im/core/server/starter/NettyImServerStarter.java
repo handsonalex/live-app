@@ -8,12 +8,15 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.live.im.core.server.common.ChannelHandlerContextCache;
 import org.live.im.core.server.common.ImMsgDecoder;
 import org.live.im.core.server.common.ImMsgEncoder;
 import org.live.im.core.server.handler.ImServerCoreHandler;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 
 @Slf4j
 @Configuration
@@ -24,6 +27,9 @@ public class NettyImServerStarter implements InitializingBean {
 
     @Resource
     private ImServerCoreHandler imServerCoreHandler;
+
+    @Resource
+    private Environment environment;
 
     //基于netty去启动一个java进程，绑定监听的端口
     public void startApplication() throws InterruptedException {
@@ -52,6 +58,13 @@ public class NettyImServerStarter implements InitializingBean {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
         }));
+        //获取im服务的注册ip
+        String registryIp = environment.getProperty("DUBBO_IP_TO_REGISTRY");
+        String registryPort = environment.getProperty("DUBBO_PORT_TO_REGISTRY");
+        if (StringUtils.isEmpty(registryIp) || StringUtils.isEmpty(registryPort)){
+            throw new IllegalArgumentException("启动参数中注册端口和注册ip不能为空");
+        }
+        ChannelHandlerContextCache.setServerIpAddress(registryIp + ":" + registryPort);
         ChannelFuture channelFuture = bootstrap.bind(port).sync();
         log.info("服务启动成功，监听端口为：" + port);
         //这里会阻塞掉主线程，实现服务长期开启

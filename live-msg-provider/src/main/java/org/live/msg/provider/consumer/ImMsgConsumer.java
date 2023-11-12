@@ -17,6 +17,10 @@ public class ImMsgConsumer implements InitializingBean {
 
     @Resource
     private RocketMQConsumerProperties rocketMQConsumerProperties;
+    // 记录每个用户连接的im服务器地址，然后根据im服务器的连接地址去做具体机器调用
+    // 基于mq广播思路去做，可能会有消息风暴，100台im机器，99%mq消息是无效的
+    // 加入一个叫路由层的设计，router中转的设计，router就是一个dubbo的rpc层
+    //A --> B  im-core-server -> msg-provider(对消息进行处理) -> im-core-server -> 通知B
     @Override
     public void afterPropertiesSet() throws Exception {
         DefaultMQPushConsumer mqPushConsumer = new DefaultMQPushConsumer();

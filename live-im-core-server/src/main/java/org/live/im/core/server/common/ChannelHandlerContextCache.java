@@ -7,7 +7,17 @@ import java.util.Map;
 
 public class ChannelHandlerContextCache {
 
+    private static String SERVER_IP_ADDRESS = "";
+
     private static Map<Long, ChannelHandlerContext> channelHandlerContextMap = new HashMap<>();
+
+    public static String getServerIpAddress() {
+        return SERVER_IP_ADDRESS;
+    }
+
+    public static void setServerIpAddress(String serverIpAddress) {
+        SERVER_IP_ADDRESS = serverIpAddress;
+    }
 
     public static ChannelHandlerContext get(long userId){
         return channelHandlerContextMap.get(userId);

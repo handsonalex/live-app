@@ -1,3 +1,4 @@
+#指定基础镜像
 FROM openjdk:17-jdk-alpine
 VOLUME /tmp
 #将arthus的压缩包拷贝到docker容器中

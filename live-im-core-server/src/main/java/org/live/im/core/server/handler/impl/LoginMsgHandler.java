@@ -2,18 +2,24 @@ package org.live.im.core.server.handler.impl;
 
 import com.alibaba.fastjson.JSON;
 import io.netty.channel.ChannelHandlerContext;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.live.im.constants.AppIdEnum;
+import org.live.im.constants.ImConstants;
 import org.live.im.constants.ImMsgCodeEnum;
 import org.live.im.core.server.common.ChannelHandlerContextCache;
 import org.live.im.core.server.common.ImContextUtils;
 import org.live.im.core.server.common.ImMsg;
 import org.live.im.core.server.handler.SimplyHandler;
+import org.live.im.core.server.interfaces.constants.ImCoreServerConstants;
 import org.live.im.dto.ImMsgBody;
 import org.live.im.interfaces.ImTokenRpc;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
+
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Component
@@ -21,6 +27,9 @@ public class LoginMsgHandler implements SimplyHandler {
 
     @DubboReference
     private ImTokenRpc imTokenRpc;
+
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
 
     @Override
     public void handler(ChannelHandlerContext ctx, ImMsg imMsg) {
@@ -56,6 +65,8 @@ public class LoginMsgHandler implements SimplyHandler {
             respBody.setUserId(userId);
             respBody.setData("true");
             ImMsg respMsg = ImMsg.build(ImMsgCodeEnum.IM_LOGIN_MSG.getCode(), JSON.toJSONString(respBody));
+            stringRedisTemplate.opsForValue().set(ImCoreServerConstants.IM_BIND_IP_KEY + appId + userId,
+                    ChannelHandlerContextCache.getServerIpAddress(), ImConstants.DEFAULT_HEART_BEAT_GAP * 2, TimeUnit.SECONDS);
             log.info("{LoginMsgHandler} login success,userId is {},appId is {}",userId,appId);
             ctx.writeAndFlush(respMsg);
             return;

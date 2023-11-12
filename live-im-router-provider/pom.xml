@@ -6,37 +6,29 @@
         <artifactId>live-app</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>live-im-core-server</artifactId>
-    <description>基于netty构建的im服务</description>
-
+    <artifactId>live-im-router-provider</artifactId>
+    <description>转发请求给到im服务</description>
     <properties>
-        <netty-all.version>4.1.89.Final</netty-all.version>
+        <live-redis-starter.version>1.0-SNAPSHOT</live-redis-starter.version>
+        <live-im-interface.version>1.0-SNAPSHOT</live-im-interface.version>
+        <live-common-interface.version>1.0-SNAPSHOT</live-common-interface.version>
     </properties>
+
     <dependencies>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>${netty-all.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>2.0.32</version>
-        </dependency>
-        <dependency>
-            <groupId>org.idea</groupId>
-            <artifactId>live-im-interface</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>org.idea</groupId>
             <artifactId>live-common-interface</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${live-common-interface.version}</version>
         </dependency>
         <dependency>
             <groupId>org.idea</groupId>
             <artifactId>live-framework-redis-starter</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${live-redis-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>${dubbo.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -47,28 +39,30 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>${dubbo.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
             <version>${spring-cloud-boostrap.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>org.idea</groupId>
+            <artifactId>live-im-interface</artifactId>
+            <version>${live-im-interface.version}</version>
         </dependency>
         <dependency>
             <groupId>org.idea</groupId>
-            <artifactId>live-framework-mq-starter</artifactId>
+            <artifactId>live-im-router-interfaces</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.idea</groupId>
             <artifactId>live-im-core-server-interfaces</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 </project>
